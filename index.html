@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+  <script src="jquery.corner.js"></script>
+</head>
+<body>
+
+  <h2>Original Image</h2>
+  <img src="1.jpg" alt="Original Image">
+
+  <h2>Corner Styles Demo</h2>
+  <div class="image-container">
+    <img class="border rounded" src="1.jpg" alt="Rounded Corners">
+    <img class="border elliptical" src="1.jpg" alt="Elliptical Corners">
+    <img class="border clipped" src="1.jpg" alt="Clipped Corners">
+  </div>
+
+  <script type="text/javascript">
+    $(function(){
+      
+      $(".border.rounded").corner();
+
+      
+      $(".border.elliptical").corner({
+        topLeftShape: 'ellipse',
+        topRightShape: 'ellipse',
+        bottomRightShape: 'ellipse',
+        bottomLeftShape: 'ellipse',
+        topLeftRadius: '2em 1em', 
+        topRightRadius: '2em 1em',
+        bottomRightRadius: '2em 1em',
+        bottomLeftRadius: '2em 1em'
+      });
+
+      $(".border.clipped").corner({ clipContent: true });
+    });
+  </script>
+
+</body>
+</html>
